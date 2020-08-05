@@ -5,7 +5,6 @@ namespace App\Http\Controllers\API;
 use App\WorkExperience;
 use Illuminate\Http\Request;
 use App\Http\Controllers\API\BaseController as BaseController;
-use Illuminate\Support\Facades\Auth;
 use Validator;
 use App\Http\Resources\Work_Experience as WorkExperienceResource;
 use App\User;
@@ -35,6 +34,7 @@ class WorkExperienceController extends BaseController
         $input = $request->all();
 
         $validator = Validator::make($input, [
+            'title' => 'required',
             'work_experience' => 'required',
             'start_date' => 'required',
             'end_date' => 'required'
@@ -80,6 +80,7 @@ class WorkExperienceController extends BaseController
         $input = $request->all();
 
         $validator = Validator::make($input, [
+            'title' => 'required',
             'work_experience' => 'required',
             'start_date' => 'required|date|before:end_date|before:tomorrow',
             'end_date' => 'required|date|after:start_date|before:tomorrow'

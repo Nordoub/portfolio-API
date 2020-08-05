@@ -15,6 +15,7 @@ class CreateWorkExperiencesTable extends Migration
     {
         Schema::create('work_experiences', function (Blueprint $table) {
             $table->foreignId('user_id')->constrained('users');
+            $table->string('title');
             $table->text('work_experience');
             $table->date('start_date');
             $table->date('end_date');

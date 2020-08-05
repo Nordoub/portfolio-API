@@ -12,6 +12,10 @@ class WorkExperience extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'work_experience', 'start_date', 'end_date'
+        'title', 'work_experience', 'start_date', 'end_date'
     ];
+
+//    protected $hidden = [
+//        'user_id'
+//    ];
 }

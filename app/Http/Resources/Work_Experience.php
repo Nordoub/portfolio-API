@@ -16,6 +16,7 @@ class Work_Experience extends JsonResource
     {
         return [
             'user_id' => $this->user_id,
+            'title' => $this->title,
             'work_experience' => $this->work_experience,
             'created_at' => $this->created_at->format('d/m/Y'),
             'updated_at' => $this->updated_at->format('d/m/Y'),
